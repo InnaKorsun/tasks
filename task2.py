@@ -7,7 +7,7 @@ print(c)
 num = int(input("Enter two digit number"))
 tens = num//10
 print(tens)
-#3
+#3 Count sum of number
 num = int(input("Enter three digit number"))
 sum =num%10 + num//100 + (num//10)%10
 print(sum)
