@@ -1,12 +1,12 @@
 #Написать функцию is_year_leap, принимающую 1 аргумент — год, и
 #возвращающую True, если год високосный, и False иначе.
-def yer (year):
+def year (year):
     if year % 4 != 0 or (year % 100 == 0 and year % 400 != 0):
         res = "False"
     else:
         res = "True"
     return res
-print(yer(2100))
+print(year(2000))
 #Функция принимает три числа a, b, c. Функция должна определить,
 #существует ли треугольник с такими сторонами. Если треугольник
 #существует, вернёт True, иначе False.
@@ -17,6 +17,7 @@ def triangle (a,b,c):
         res = "False"
     return res
 print(triangle(3,3,53))
+print(triangle(4,4,4))
 #Функция принимает три числа a, b, c. Функция должна определить, существует
 #ли треугольник с такими сторонами и если существует, то возвращает тип
 #треугольника Equilateral triangle (равносторонний), Isosceles triangle
@@ -33,4 +34,4 @@ def triangletype (a,b,c):
     else:
         res = "Not a triangle"
     return res
-print(triangletype(3,3,3))
+#print(triangletype(3,3,4))

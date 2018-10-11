@@ -18,4 +18,3 @@ def numbers (*r):
     print(r[1])
     return r[1]
 numbers(*r)
-
