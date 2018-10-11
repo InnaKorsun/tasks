@@ -5,19 +5,24 @@ class Person(object):
         self.year_birth=year_birth
 
         if year_birth not in range(1900, 2019):
+            #Now year of birth set as default 1990 because Year of birth more than 2018 or less than 1900
             self.year_birth=1990
-            raise Exception("Year of birth more than 2018 or less than 1900. /"
-                            "Now year of birth set as default 1990")
-        ## check that full name parametr contains 2 words
+
+            #raise Exception("Year of birth more than 2018 or less than 1900. /"
+            #print( "Now year of birth set as default 1990 because Year of birth more than 2018 or less than 1900")
+
+    ## check that full name parametr contains 2 words
         if len(full_name.split()) != 2:
-            raise Exception ("Full name does not contain 2 words")
+            #Full name does not contain 2 words, defauls full name set as Default Name
+
+            self.full_name = "Default Name"
+            #raise Exception ("Full name does not contain 2 words")
+            #print("Full name does not contain 2 words, defauls full name set as Default Name")
+
 
         ## check that year of birth contain only numbers
         if not str(year_birth).isdigit():
-                raise Exception ("Year of birth is not a number")
-
-    def get_year(self):
-        return self.year_birth
+            raise Exception ("Year of birth is not a number")
 
     def get_name(self):
         name = self.full_name.split()[0]
@@ -33,7 +38,7 @@ class Person(object):
 
 
 if __name__ == "__main__":
-    per1 = Person("Lola",1990)
+    per1 = Person("Lola",1800)
     print(per1.get_name())
     print(per1.get_surname())
     print(per1.age_in(2019))

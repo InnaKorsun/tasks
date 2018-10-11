@@ -3,12 +3,15 @@ from ITEmployee import *
 
 class it_employee_positive(unittest.TestCase):
 
-    def setUp(self):
+    #def setUp(self):
         ## create 3 test instance of ITEmployee class
-        self.actual_result = ITEmployee("Victor Petrov",1978,"QA",10,3000)
-        self.actual_result_sec = ITEmployee ("Vika Lapina", 1990, "QA", 1, 500)
-        self.actual_result_third = ITEmployee("Vitya Lomov", 1990, "QA", 5, 1500)
+    actual_result = ITEmployee("Victor Petrov",1978,"QA",10,3000)
+    actual_result_sec = ITEmployee ("Vika Lapina", 1990, "QA", 1, 500)
+    actual_result_third = ITEmployee("Vitya Lomov", 1990, "QA", 5, 1500)
 
+        #create test instance for negative tests
+    actual_result_negative = ITEmployee("Inna",1800,None,0,0)
+    actual_result_negative_sec = ITEmployee("Inna",2028,None,0,0)
 
 
     def test_it_employee_positive(self):
@@ -52,22 +55,16 @@ class it_employee_positive(unittest.TestCase):
 
 
 ### Negative
+    def test_negative_only_name(self):
+        #if full name doesn't contains 2 words set default name as "Default Name"
+        self.assertEqual(self.actual_result_negative.get_surname(),"Name")
 
+    def test_negative_birth_less(self):
+        self.assertEqual(self.actual_result_negative.year_birth,1990)
 
-            #def test_raise_not_full_name(self):
-        #test exception for case: only 1 word in full name)
-        #actual_result_negative = ITEmployee("Inna",1990, "QA", 0, 0)
-        #with self.assertRaises(Exception) as context:
-         #   actual_result_negative
-        #actual_result_negative.get_surname()
-        #self.assert
+    def test_negative_birth_more(self):
+        self.assertEqual(self.actual_result_negative_sec.year_birth,1990)
 
-    #def test_raise_age(self):
-        #test exception for case: year of birth less than 1900)
-    #    no_age = self.actual_result_negative.get_year()
-    #    print(no_age)
-    #    self.assertRaises(Exception,no_age)
-    #    pass
 
 
 if __name__=="__main__":
