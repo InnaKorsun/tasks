@@ -8,13 +8,13 @@ def sing(a=3, b=3, c=0):
         text = text.replace(".","!") # если не точка - ставим знак восклицания
     #print(text)
     return text
-sing(4,6,0)
+#sing(4,6,0)
 
 #выводит второе по возрастанию значение из переданных аргументов.
 
-r = [x for x in input("Enter sequence number by split whitespace:").split()]
-def numbers (*r):
-    r = sorted(r)
-    print(r[1])
-    return r[1]
-numbers(*r)
+#r = [x for x in input("Enter sequence number by split whitespace:").split()]
+#def numbers (*r):
+#    r = sorted(r)
+##    print(r[1])
+#    return r[1]
+#numbers(*r)

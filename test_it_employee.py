@@ -9,10 +9,6 @@ class it_employee_positive(unittest.TestCase):
     actual_result_sec = ITEmployee ("Vika Lapina", 1990, "QA", 1, 500)
     actual_result_third = ITEmployee("Vitya Lomov", 1990, "QA", 5, 1500)
 
-        #create test instance for negative tests
-    actual_result_negative = ITEmployee("Inna",1800,None,0,0)
-    actual_result_negative_sec = ITEmployee("Inna",2028,None,0,0)
-
 
     def test_it_employee_positive(self):
         self.assertIsInstance(self.actual_result, ITEmployee)
@@ -25,9 +21,9 @@ class it_employee_positive(unittest.TestCase):
 
     def tast_it_employee_add_skills(self):
         #test add_skillS method(ITEmployee class)
-        self.actual_result.add_skill("Linux","Networking")
-        self.assertListEqual(self.actual_result.skills,["Linux","Networking"])
-
+        self.actual_result.add_skills("Linux","Networking")
+        #self.assertListEqual(self.actual_result.skills,["Linux","Networking"])
+        self.assertIn("Linux",self.actual_result.skills)
 
 
     def test_employee_add_salary(self):
@@ -54,7 +50,12 @@ class it_employee_positive(unittest.TestCase):
         self.assertEqual(self.actual_result.age_in(2018), 40)
 
 
-### Negative
+class it_employee_negative(unittest.TestCase):
+
+        #create test instance for negative tests
+    actual_result_negative = ITEmployee("Inna",1800,None,0,0)
+    actual_result_negative_sec = ITEmployee("Inna",2028,None,0,0)
+
     def test_negative_only_name(self):
         #if full name doesn't contains 2 words set default name as "Default Name"
         self.assertEqual(self.actual_result_negative.get_surname(),"Name")

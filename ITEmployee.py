@@ -26,12 +26,12 @@ if __name__=="__main__":
     print(it)
     it.raise_salary(2000)
     print(it.salary)
-    it.add_skill("SQL")
-    print(it.skills)
-    it.add_skill("Networking")
-    print(it.skills)
+    #it.add_skill("SQL")
+    #print(it.skills)
+    #it.add_skill("Networking")
+    #print(it.skills)
     it.add_skills(["Linux","MacOs"])
     print(it.skills)
-    print(it.year_birth)
+    #print(it.year_birth)
 
 
