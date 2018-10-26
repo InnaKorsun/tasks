@@ -16,14 +16,16 @@ def add_book(new_book):
     r = requests.post(base_url,data = new_book)
     print("Add book:"+str(r.status_code))
     id = r.json()["id"]
-    return id
+    return id,r
 
+#   return r.json()['id'], r
 def show_all():
     'show all books'
     r = requests.get(base_url)
     books = r.json()
     for i in books:
         print(i)
+    return r
 
 def show_current_book(id):
     #show book with id
@@ -34,7 +36,7 @@ def show_current_book(id):
     if is_update == True:
         assert book['title'] == update_info['title']
         assert book['author'] == update_info['author']
-
+    return r
 
 def check_book_in_list(id):
     # check that books with id present in books list
@@ -46,7 +48,7 @@ def check_book_in_list(id):
         if is_update == True:
             assert i["title"]==update_info["title"]
             assert i["author"] == update_info["author"]
-
+    return r
 
 
 def update_book (id, update_info):
@@ -54,21 +56,22 @@ def update_book (id, update_info):
     r = requests.put(base_url + str(id), data = update_info)
     print("Book update: "+str(r.status_code))
     is_update = True
-
+    return r
 
 def delete_books(id):
     # delete book with id
     r = requests.delete(base_url+ str(id))
     print("Book deleted and status code is" + str(r.status_code))
     assert (r.status_code == 204)
+    return r
 
 if __name__ == "__main__":
 
-    id = add_book(new_book)
+    id,r = add_book(new_book)
     #show_current_book(id)
-    #check_book_in_list(id)
+    check_book_in_list(id)
     #update_book(id,update_info)
     #show_current_book(id)
     #check_book_in_list(id)
-    #delete_books(id)
+    delete_books(id)
 
