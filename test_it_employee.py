@@ -50,21 +50,22 @@ class it_employee_positive(unittest.TestCase):
         self.assertEqual(self.actual_result.age_in(2018), 40)
 
 
-class it_employee_negative(unittest.TestCase):
+#class it_employee_negative(unittest.TestCase):
 
         #create test instance for negative tests
-    actual_result_negative = ITEmployee("Inna",1800,None,0,0)
-    actual_result_negative_sec = ITEmployee("Inna",2028,None,0,0)
+    #actual_result_negative = ITEmployee("Inna",1800,None,0,0)
+    #actual_result_negative_sec = ITEmployee("Inna",2028,None,0,0)
 
-    def test_negative_only_name(self):
-        #if full name doesn't contains 2 words set default name as "Default Name"
-        self.assertEqual(self.actual_result_negative.get_surname(),"Name")
+    #def test_negative_only_name(self):
+        #if full name doesn't contains 2 words
 
-    def test_negative_birth_less(self):
-        self.assertEqual(self.actual_result_negative.year_birth,1990)
+     #   self.assertRaises(ITEmployee("Inna",1800,None,0,0),ValueError)
 
-    def test_negative_birth_more(self):
-        self.assertEqual(self.actual_result_negative_sec.year_birth,1990)
+    #def test_negative_birth_less(self):
+    #    self.assertRaises(self.ITEmployee("Inna",1800,None,0,0).year_birth,ValueError)
+
+    #def test_negative_birth_more(self):
+     #   self.assertRaises(self.actual_result_negative_sec.year_birth,ValueError)
 
 
 

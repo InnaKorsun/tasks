@@ -7,14 +7,6 @@ class ITEmployee(Employee):
         Employee.__init__(self, *args,**kwargs)
         self.skills = []
 
-    #def __init__(self, full_name="", year_birth=0, position=None, experience=0, salary=1000):
-    #    self.full_name = full_name
-    #    self.year_birth = year_birth
-    #    self.position = position
-    #    self.experience  = experience
-    #    self.salary = salary
-    #    self.skills = []
-
     def add_skill(self,new_skill):
         self.skills.append(new_skill)
 
@@ -23,15 +15,14 @@ class ITEmployee(Employee):
 
 if __name__=="__main__":
     it = ITEmployee("Vova Petrov",1990,"Lead",10,1000)
-    print(it)
     it.raise_salary(2000)
     print(it.salary)
-    #it.add_skill("SQL")
-    #print(it.skills)
-    #it.add_skill("Networking")
-    #print(it.skills)
+    it.add_skill("SQL")
+    print(it.skills)
+    it.add_skill("Networking")
+    print(it.skills)
     it.add_skills(["Linux","MacOs"])
     print(it.skills)
-    #print(it.year_birth)
+    print(it.year_birth)
 
 
