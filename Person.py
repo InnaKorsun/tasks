@@ -36,6 +36,6 @@ if __name__ == "__main__":
     print(per1.get_name())
     print(per1.get_surname())
     print(per1.age_in())
-    
+
 
 
